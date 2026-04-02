@@ -35,3 +35,18 @@ void mergeSort(int low, int high) {
 
     mergeSort(low, mid);      // Left half
     mergeSort(mid + 1, high); // Right half
+
+    int i = low;     // Starting index for left subarray
+    int j = mid + 1; // Starting index for right subarray
+    int k = low;     // Starting index for temporary array B
+
+    while (i <= mid && j <= high) {
+        if (arr[i] <= arr[j]) {
+            B[k] = arr[i];
+            i++;
+        } else {
+            B[k] = arr[j];
+            j++;
+        }
+        k++;
+    }
